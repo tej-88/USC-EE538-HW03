@@ -55,3 +55,17 @@ TEST(WordHistogram, Palindrome) {
     std::map<std::string, int> expected = {{"hey", 1}, {"yeh", 1}};
     EXPECT_EQ(expected, actual);
 }
+
+TEST(WordHistogram, Sentence) {
+    std::string input = "this is a test, and this is another one.";
+    std::map<std::string, int> actual = WordHistogram(input);
+    std::map<std::string, int> expected = { {"a", 1},\
+                                            {"and", 1},\
+                                            {"another", 1},\
+                                            {"is", 2},\
+                                            {"one", 1},\
+                                            {"test", 1},\
+                                            {"this", 2}\
+                                            };
+    EXPECT_EQ(expected, actual);
+}

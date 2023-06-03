@@ -33,7 +33,7 @@ bool Queue::IsEmpty() {
 
 // Returns the value in the front of the queue. If the queue is empty, return
 // -1.
-int Front() {
+int Queue::Front() {
     if (IsEmpty()) {
         return -1;
     }

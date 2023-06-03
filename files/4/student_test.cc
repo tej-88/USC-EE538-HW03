@@ -7,4 +7,9 @@
 //-----------------------------------------------------------------------------
 // Write some test cases for each function.
 //-----------------------------------------------------------------------------
-TEST(SinglyLinkedList, Test1) {}
+TEST(ParamConstructor, EmptyInput) {
+    std::vector<int> v;
+    SinglyLinkedList l(v);
+    EXPECT_EQ(l.size_, 0);
+    EXPECT_EQ(l.head_, nullptr);
+}

@@ -147,3 +147,9 @@ TEST(Operator, EmptyInput) {
     SinglyLinkedList l;
     EXPECT_EQ(l[1], -1);
 }
+
+TEST(Operator, NonEmptyInput) {
+    std::vector<int> v = {1, 2};
+    SinglyLinkedList l(v);
+    EXPECT_EQ(l[1], 2);
+}

@@ -85,3 +85,9 @@ TEST(PushBack, Input) {
     EXPECT_EQ(l.size(), 1);
     EXPECT_NE(l.head(), nullptr);
 }
+
+//-----------------------------------------------------------------------------
+TEST(Pop_Back, EmptyInput) {
+    SinglyLinkedList l;
+    EXPECT_FALSE(l.pop_back());
+}

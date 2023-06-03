@@ -77,3 +77,11 @@ TEST(Head, NonEmptyInput) {
     SinglyLinkedList l(v);
     EXPECT_NE(l.head(), nullptr);
 }
+
+//-----------------------------------------------------------------------------
+TEST(PushBack, EmptyInput) {
+    SinglyLinkedList l;
+    EXPECT_EQ(l.push_back(1), void);
+    EXPECT_EQ(l.size(), 1);
+    EXPECT_NE(l.head(), nullptr);
+}

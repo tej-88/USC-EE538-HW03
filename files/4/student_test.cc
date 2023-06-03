@@ -197,3 +197,9 @@ TEST(Erase, FirstElementSingleInput) {
     SinglyLinkedList l(v);
     EXPECT_NE(l.erase(0), nullptr);
 }
+
+TEST(Erase, OutOfRange) {
+    std::vector<int> v = {1};
+    SinglyLinkedList l(v);
+    EXPECT_EQ(l.erase(10), nullptr);
+}

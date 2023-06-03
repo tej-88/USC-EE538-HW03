@@ -71,3 +71,9 @@ TEST(Head, EmptyInput) {
     SinglyLinkedList l;
     EXPECT_EQ(l.head(), nullptr);
 }
+
+TEST(Head, NonEmptyInput) {
+    std::vector<int> v = {1, 2};
+    SinglyLinkedList l(v);
+    EXPECT_NE(l.head(), nullptr);
+}

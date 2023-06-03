@@ -13,3 +13,15 @@ bool Queue::Enqueue(int value) {
     v_.push_back(value);
     return true;
 }
+
+// Removes from the front of the queue. If the queue is empty, return false,
+// otherwise true.
+bool Queue::Dequeue() {
+    if (IsEmpty()) {
+        return false;
+    }
+    else {
+        v_.erase(v_.begin());
+        return true;
+    }
+}

@@ -92,3 +92,8 @@ int SinglyLinkedList::back() {
         return back_node_ptr->val;
     }
 }
+
+// Returns a pointer to the back of the list.
+ListNode *SinglyLinkedList::GetBackPointer() {
+    return GetIthPointer(size() - 1);
+}

@@ -59,3 +59,9 @@ TEST(Size, EmptyInput) {
     SinglyLinkedList l;
     EXPECT_EQ(l.size(), 0);
 }
+
+TEST(Size, NonEmptyInput) {
+    std::vector<int> v = {1, 2};
+    SinglyLinkedList l(v);
+    EXPECT_EQ(l.size(), 2);
+}

@@ -158,5 +158,10 @@ TEST(Operator, NonEmptyInput) {
 TEST(Print, NonEmptyInput) {
     std::vector<int> v = {1, 2};
     SinglyLinkedList l(v);
-    v.print();
+    l.print();
+}
+
+TEST(Print, EmptyInput) {
+    SinglyLinkedList l;
+    l.print();
 }

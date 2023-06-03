@@ -165,3 +165,10 @@ TEST(Print, EmptyInput) {
     SinglyLinkedList l;
     l.print();
 }
+
+//-----------------------------------------------------------------------------
+TEST(ConvertToVector, EmptyInput) {
+    SinglyLinkedList l;
+    std::vector<int> expected;
+    EXPECT_EQ(l.convert_to_vector(), expected);
+}

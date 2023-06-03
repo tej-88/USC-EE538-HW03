@@ -13,3 +13,12 @@ TEST(ParamConstructor, EmptyInput) {
     EXPECT_EQ(l.size_, 0);
     EXPECT_EQ(l.head_, nullptr);
 }
+
+TEST(ParamConstructor, NonEmptyInput) {
+    std::vector<int> v = {1, 2};
+    SinglyLinkedList l(v);
+    EXPECT_EQ(l.size_, 2);
+    EXPECT_NE(l.head_, nullptr);
+    EXPECT_EQ(l[0], 1);
+    EXPECT_EQ(l[1], 2);
+}

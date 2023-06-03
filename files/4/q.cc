@@ -124,3 +124,12 @@ int SinglyLinkedList::operator[](int i) {
         return i_node_ptr->val;
     }
 }
+
+ // Prints the items in the list.
+void SinglyLinkedList::print() {
+    for (int i = 0, s = size(); i < s; i++) {
+        std::cout << operator[i] << " ";
+    }
+    std::cout << std::endl;
+    return;
+}

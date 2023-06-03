@@ -23,3 +23,16 @@ SinglyLinkedList::SinglyLinkedList(const std::vector<int> &v) {
         }
     }
 }
+
+// Copy constructor.
+SinglyLinkedList::SinglyLinkedList(const SinglyLinkedList &rhs) {
+    if (rhs.empty()) {
+        size_ = 0;
+        head_ = nullptr;
+    }
+    else {
+        for (int i = 0; i < rhs.size_; i++) {
+            push_back(rhs[i]);
+        }
+    }
+}

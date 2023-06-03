@@ -98,3 +98,9 @@ TEST(Pop_Back, NonEmptyInput) {
     EXPECT_TRUE(l.pop_back());
     EXPECT_EQ(l.size(), 1);
 }
+
+//-----------------------------------------------------------------------------
+TEST(Back, EmptyInput) {
+    SinglyLinkedList l;
+    EXPECT_EQ(l.back(), -1);
+}

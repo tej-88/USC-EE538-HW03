@@ -36,3 +36,8 @@ SinglyLinkedList::SinglyLinkedList(const SinglyLinkedList &rhs) {
         }
     }
 }
+
+// Returns true if the list is empty, false otherwise.
+bool SinglyLinkedList::empty() {
+    return (size_ == 0);
+}

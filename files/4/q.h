@@ -37,6 +37,7 @@ class SinglyLinkedList {
 
   // Destructor
   ~SinglyLinkedList();
+  
   // Returns true if the list is empty, false otherwise.
   bool empty();
 

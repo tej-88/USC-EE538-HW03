@@ -7,4 +7,9 @@
 //-----------------------------------------------------------------------------
 // Write some test cases for each function.
 //-----------------------------------------------------------------------------
-TEST(MyQueue, Test1) {}
+TEST(CopyConstructor, EmptyInput) {
+    Queue s;
+    Queue r(s);
+    EXPECT_EQ(r.IsEmpty(), s.IsEmpty());
+    EXPECT_EQ(r.Front(), s.Front());
+}

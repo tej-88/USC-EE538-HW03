@@ -110,3 +110,9 @@ TEST(Back, NonEmptyInput) {
     SinglyLinkedList l(v);
     EXPECT_EQ(l.back(), 2);
 }
+
+//-----------------------------------------------------------------------------
+TEST(GetBackPointer, EmptyInput) {
+    SinglyLinkedList l;
+    EXPECT_EQ(l.GetBackPointer(), nullptr);
+}

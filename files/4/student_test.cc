@@ -122,3 +122,9 @@ TEST(GetBackPointer, NonEmptyInput) {
     SinglyLinkedList l(v);
     EXPECT_NE(l.GetBackPointer(), nullptr);
 }
+
+//-----------------------------------------------------------------------------
+TEST(GetIthPointer, EmptyInput) {
+    SinglyLinkedList l;
+    EXPECT_EQ(l.GetIthPointer(1), nullptr);
+}

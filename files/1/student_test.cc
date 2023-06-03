@@ -48,3 +48,10 @@ TEST(WordHistogram, OnlySpecialChars) {
     std::map<std::string, int> expected;
     EXPECT_EQ(expected, actual);
 }
+
+TEST(WordHistogram, Palindrome) {
+    std::string input = " hey, yeh.";
+    std::map<std::string, int> actual = WordHistogram(input);
+    std::map<std::string, int> expected = {{"hey", 1}, {"yeh", 1}};
+    EXPECT_EQ(expected, actual);
+}

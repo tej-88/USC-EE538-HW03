@@ -144,3 +144,29 @@ std::vector<int> SinglyLinkedList::convert_to_vector() {
     }
     return v;
 }
+
+// Erases element i from the list if it exists and returns a pointer to item
+// i-1. If item i doesn't exist, returns nullptr. The first item in the list
+// has index 0.
+
+// Example:
+// Input: 1 -> 5 -> 10 ->20, i= 2.
+// Output: 1 -> 5 -> 20, return value: a pointer to element 5.
+ListNode *SinglyLinkedList::erase(int i) {
+    if ((i < 0) || (i >= size())) {
+        return nullptr;
+    }
+    else if (i == 0) {
+        ListNode *tmp_node_ptr = head_;
+        head_ = tmp_node_ptr->next;
+        delete tmp_node_ptr;
+        return head_;
+    }
+    else {
+        ListNode *i_node_ptr = GetIthPointer(i);
+        ListNode *i_prev_node_ptr = GetIthPointer(i - 1);
+        i_prev_node_ptr->next = i_node_ptr->next;
+        delete i_node_ptr;
+        return i_prev_node_ptr;
+    }
+}

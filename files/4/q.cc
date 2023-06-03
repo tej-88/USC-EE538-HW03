@@ -112,3 +112,15 @@ ListNode *SinglyLinkedList::GetIthPointer(int i) {
         return tmp_node_ptr;
     }
 }
+
+// Returns the i(th) element in the list. -1 if it doesn't exits.
+int SinglyLinkedList::operator[](int i) {
+    ListNode *i_node_ptr = GetIthPointer(i);
+
+    if (i_node_ptr == nullptr) {
+        return -1;
+    }
+    else {
+        return i_node_ptr->val;
+    }
+}

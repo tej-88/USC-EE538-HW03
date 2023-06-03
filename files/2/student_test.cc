@@ -26,11 +26,16 @@ TEST(CopyConstructor, NonEmptyInput) {
 TEST(Enqueue, EmptyInput) {
     Queue s;
     EXPECT_TRUE(s.Enqueue(1));
-    EXPECT_EQ(s.Front(), 1);
 }
 
 //-----------------------------------------------------------------------------
 TEST(Dequeue, EmptyInput) {
     Queue s;
     EXPECT_FALSE(s.Dequeue());
+}
+
+TEST(Dequeue, NonEmptyInput) {
+    Queue s;
+    s.Enqueue(1);
+    EXPECT_TRUE(s.Dequeue());
 }

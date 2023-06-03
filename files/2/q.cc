@@ -25,3 +25,8 @@ bool Queue::Dequeue() {
         return true;
     }
 }
+
+// Returns true if the queue is empty.
+bool Queue::IsEmpty() {
+    return v_.empty();
+}

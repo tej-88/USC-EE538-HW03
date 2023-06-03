@@ -13,3 +13,10 @@ TEST(WordHistogram, EmptyInput) {
     std::map<std::string, int> expected;
     EXPECT_EQ(expected, actual);
 }
+
+TEST(WordHistogram, SingleWord) {
+    std::string input = "he";
+    std::map<std::string, int> actual = WordHistogram(input);
+    std::map<std::string, int> expected = {{"he", 1}};
+    EXPECT_EQ(expected, actual);
+}

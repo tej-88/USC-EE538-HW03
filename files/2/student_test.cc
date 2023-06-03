@@ -57,3 +57,9 @@ TEST(Front, EmptyInput) {
     Queue s;
     EXPECT_EQ(s.Front(), -1);
 }
+
+TEST(Front, NonEmptyInput) {
+    Queue s;
+    s.Enqueue(1);
+    EXPECT_EQ(s.Front(), 1);
+}

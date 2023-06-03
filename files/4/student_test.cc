@@ -189,6 +189,11 @@ TEST(Erase, EmptyInput) {
 TEST(Erase, FirstElementMultiInput) {
     std::vector<int> v = {1, 2};
     SinglyLinkedList l(v);
-    std::vector<int> expected = {1, 2};
     EXPECT_NE(l.erase(1), nullptr);
+}
+
+TEST(Erase, FirstElementSingleInput) {
+    std::vector<int> v = {1};
+    SinglyLinkedList l(v);
+    EXPECT_NE(l.erase(0), nullptr);
 }

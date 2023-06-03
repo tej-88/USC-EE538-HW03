@@ -46,3 +46,8 @@ bool SinglyLinkedList::empty() {
 int SinglyLinkedList::size() {
     return size_;
 }
+
+// Returns a pointer to the head of the list.
+ListNode *SinglyLinkedList::head() {
+    return head_;
+}

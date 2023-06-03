@@ -172,3 +172,10 @@ TEST(ConvertToVector, EmptyInput) {
     std::vector<int> expected;
     EXPECT_EQ(l.convert_to_vector(), expected);
 }
+
+TEST(ConvertToVector, NonEmptyInput) {
+    std::vector<int> v = {1, 2};
+    SinglyLinkedList l(v);
+    std::vector<int> expected = {1, 2};
+    EXPECT_EQ(l.convert_to_vector(), expected);
+}

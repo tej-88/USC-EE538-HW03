@@ -47,3 +47,9 @@ TEST(Empty, EmptyInput) {
     SinglyLinkedList l;
     EXPECT_TRUE(l.empty());
 }
+
+TEST(Empty, NonEmptyInput) {
+    std::vector<int> v = {1, 2};
+    SinglyLinkedList l(v);
+    EXPECT_FALSE(l.empty());
+}

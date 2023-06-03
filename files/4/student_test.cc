@@ -104,3 +104,9 @@ TEST(Back, EmptyInput) {
     SinglyLinkedList l;
     EXPECT_EQ(l.back(), -1);
 }
+
+TEST(Back, NonEmptyInput) {
+    std::vector<int> v = {1, 2};
+    SinglyLinkedList l(v);
+    EXPECT_EQ(l.back(), 2);
+}

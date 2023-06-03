@@ -136,3 +136,8 @@ TEST(GetIthPointer, ValidInput) {
     EXPECT_EQ(l.GetIthPointer(1)->val, 2);
 }
 
+TEST(GetIthPointer, InvalidInput) {
+    std::vector<int> v = {1};
+    SinglyLinkedList l(v);
+    EXPECT_EQ(l.GetIthPointer(1), nullptr);
+}

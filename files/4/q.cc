@@ -81,3 +81,14 @@ bool SinglyLinkedList::pop_back() {
         return true;
     }
 }
+
+// Returns the item in the back of the list. Returns -1 if empty.
+int SinglyLinkedList::back() {
+    if (empty()) {
+        return -1;
+    }
+    else {
+        ListNode *back_node_ptr = GetBackPointer();
+        return back_node_ptr->val;
+    }
+}

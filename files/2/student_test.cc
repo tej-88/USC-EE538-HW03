@@ -39,3 +39,9 @@ TEST(Dequeue, NonEmptyInput) {
     s.Enqueue(1);
     EXPECT_TRUE(s.Dequeue());
 }
+
+//-----------------------------------------------------------------------------
+TEST(IsEmpty, EmptyInput) {
+    Queue s;
+    EXPECT_TRUE(s.IsEmpty());
+}

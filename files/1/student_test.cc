@@ -7,4 +7,9 @@
 //-----------------------------------------------------------------------------
 // Write some test cases for each function.
 //-----------------------------------------------------------------------------
-TEST(WordHistogram, Test1) {}
+TEST(WordHistogram, EmptyInput) {
+    std::string input;
+    std::map<std::string, int> actual = WordHistogram(input);
+    std::map<std::string, int> expected;
+    EXPECT_EQ(expected, actual);
+}

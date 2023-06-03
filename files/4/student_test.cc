@@ -179,3 +179,9 @@ TEST(ConvertToVector, NonEmptyInput) {
     std::vector<int> expected = {1, 2};
     EXPECT_EQ(l.convert_to_vector(), expected);
 }
+
+//-----------------------------------------------------------------------------
+TEST(Erase, EmptyInput) {
+    SinglyLinkedList l;
+    EXPECT_EQ(l.erase(1), nullptr);
+}

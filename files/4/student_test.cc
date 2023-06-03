@@ -79,7 +79,7 @@ TEST(Head, NonEmptyInput) {
 }
 
 //-----------------------------------------------------------------------------
-TEST(PushBack, EmptyInput) {
+TEST(PushBack, Input) {
     SinglyLinkedList l;
     EXPECT_EQ(l.push_back(1), void);
     EXPECT_EQ(l.size(), 1);

@@ -21,3 +21,10 @@ TEST(CopyConstructor, NonEmptyInput) {
     EXPECT_EQ(r.IsEmpty(), s.IsEmpty());
     EXPECT_EQ(r.Front(), s.Front());
 }
+
+//-----------------------------------------------------------------------------
+TEST(Enqueue, EmptyInput) {
+    Queue s;
+    EXPECT_TRUE(s.Enqueue(1));
+    EXPECT_EQ(s.Front(), 1);
+}

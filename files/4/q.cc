@@ -51,3 +51,19 @@ int SinglyLinkedList::size() {
 ListNode *SinglyLinkedList::head() {
     return head_;
 }
+
+// Insert i at the back of the list.
+void SinglyLinkedList::push_back(int i) {
+    if (empty()) {
+        head_ = new ListNode(i);
+        size_++;
+        return;
+    }
+    else {
+        ListNode *new_node_ptr = new ListNode(i);
+        ListNode *back_node_ptr = GetBackPointer();
+        back_node_ptr->next = new_node_ptr;
+        size_++;
+        return;
+    }
+}

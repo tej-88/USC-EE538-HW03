@@ -65,3 +65,9 @@ TEST(Size, NonEmptyInput) {
     SinglyLinkedList l(v);
     EXPECT_EQ(l.size(), 2);
 }
+
+//-----------------------------------------------------------------------------
+TEST(Head, EmptyInput) {
+    SinglyLinkedList l;
+    EXPECT_EQ(l.head(), nullptr);
+}

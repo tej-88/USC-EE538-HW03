@@ -7,3 +7,9 @@
 // Copy constructor.
 Queue::Queue(const Queue& rhs) : v_(rhs.v_) {
 }
+
+// Inserts in the back of the queue.
+bool Queue::Enqueue(int value) {
+    v_.push_back(value);
+    return true;
+}

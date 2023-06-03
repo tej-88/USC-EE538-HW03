@@ -128,3 +128,11 @@ TEST(GetIthPointer, EmptyInput) {
     SinglyLinkedList l;
     EXPECT_EQ(l.GetIthPointer(1), nullptr);
 }
+
+TEST(GetIthPointer, ValidInput) {
+    std::vector<int> v = {1, 2};
+    SinglyLinkedList l(v);
+    EXPECT_NE(l.GetIthPointer(1), nullptr);
+    EXPECT_EQ(l.GetIthPointer(1)->val, 2);
+}
+

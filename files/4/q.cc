@@ -128,8 +128,19 @@ int SinglyLinkedList::operator[](int i) {
  // Prints the items in the list.
 void SinglyLinkedList::print() {
     for (int i = 0, s = size(); i < s; i++) {
-        std::cout << operator[i] << " ";
+        std::cout << operator[](i) << " ";
     }
     std::cout << std::endl;
     return;
+}
+
+// Write a function that converts the list into a vector. Example:
+// The list: 1->4->5->6->10
+// Output: a vector with value: {1, 4, 5, 6, 10}
+std::vector<int> SinglyLinkedList::convert_to_vector() {
+    std::vector<int> v;
+    for (int i = 0, s = size(); i < s; i++) {
+        v.push_back(operator[](i));
+    }
+    return v;
 }

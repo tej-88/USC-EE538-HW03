@@ -41,3 +41,8 @@ SinglyLinkedList::SinglyLinkedList(const SinglyLinkedList &rhs) {
 bool SinglyLinkedList::empty() {
     return (size_ == 0);
 }
+
+// Returns the current size of the list.
+int SinglyLinkedList::size() {
+    return size_;
+}

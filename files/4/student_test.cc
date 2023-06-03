@@ -23,8 +23,7 @@ TEST(ParamConstructor, NonEmptyInput) {
     EXPECT_EQ(l[1], 2);
 }
 
-//-----------------------------------------------------------------------------
-// Write some test cases for each function.
+
 //-----------------------------------------------------------------------------
 TEST(CopyConstructor, EmptyInput) {
     SinglyLinkedList v;
@@ -41,4 +40,10 @@ TEST(CopyConstructor, NonEmptyInput) {
     EXPECT_NE(l.head_, nullptr);
     EXPECT_EQ(l[0], 1);
     EXPECT_EQ(l[1], 2);
+}
+
+//-----------------------------------------------------------------------------
+TEST(Empty, EmptyInput) {
+    SinglyLinkedList l;
+    EXPECT_TRUE(l.empty());
 }

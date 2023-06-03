@@ -53,7 +53,7 @@ TEST(IsEmpty, NonEmptyInput) {
 }
 
 //-----------------------------------------------------------------------------
-// TEST(IsEmpty, EmptyInput) {
-//     Queue s;
-//     EXPECT_TRUE(s.IsEmpty());
-// }
+TEST(Front, EmptyInput) {
+    Queue s;
+    EXPECT_EQ(s.Front(), -1);
+}

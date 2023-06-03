@@ -20,3 +20,10 @@ TEST(WordHistogram, SingleWord) {
     std::map<std::string, int> expected = {{"he", 1}};
     EXPECT_EQ(expected, actual);
 }
+
+TEST(WordHistogram, DuplicateWords) {
+    std::string input = "he,he";
+    std::map<std::string, int> actual = WordHistogram(input);
+    std::map<std::string, int> expected = {{"he", 2}};
+    EXPECT_EQ(expected, actual);
+}

@@ -97,3 +97,18 @@ int SinglyLinkedList::back() {
 ListNode *SinglyLinkedList::GetBackPointer() {
     return GetIthPointer(size() - 1);
 }
+
+// Returns a pointer to the i(th) element in the list. nullptr if it doesn't
+// exist.
+ListNode *SinglyLinkedList::GetIthPointer(int i) {
+    if ((i < 0) || (i >= size())) {
+        return nullptr;
+    }
+    else {
+        ListNode *tmp_node_ptr = head();
+        for (int a = 1; a <= i; a++) {
+            tmp_node_ptr = tmp_node_ptr -> next;
+        }
+        return tmp_node_ptr;
+    }
+}

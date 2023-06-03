@@ -116,3 +116,9 @@ TEST(GetBackPointer, EmptyInput) {
     SinglyLinkedList l;
     EXPECT_EQ(l.GetBackPointer(), nullptr);
 }
+
+TEST(GetBackPointer, NonEmptyInput) {
+    std::vector<int> v = {1, 2};
+    SinglyLinkedList l(v);
+    EXPECT_NE(l.GetBackPointer(), nullptr);
+}

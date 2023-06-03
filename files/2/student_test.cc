@@ -28,3 +28,9 @@ TEST(Enqueue, EmptyInput) {
     EXPECT_TRUE(s.Enqueue(1));
     EXPECT_EQ(s.Front(), 1);
 }
+
+//-----------------------------------------------------------------------------
+TEST(Dequeue, EmptyInput) {
+    Queue s;
+    EXPECT_FALSE(s.Dequeue());
+}

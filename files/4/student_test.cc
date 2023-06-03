@@ -141,3 +141,9 @@ TEST(GetIthPointer, InvalidInput) {
     SinglyLinkedList l(v);
     EXPECT_EQ(l.GetIthPointer(1), nullptr);
 }
+
+//-----------------------------------------------------------------------------
+TEST(Operator, EmptyInput) {
+    SinglyLinkedList l;
+    EXPECT_EQ(l[1], -1);
+}

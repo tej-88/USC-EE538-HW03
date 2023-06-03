@@ -67,3 +67,17 @@ void SinglyLinkedList::push_back(int i) {
         return;
     }
 }
+
+// Removes an item from the back of the list. Returns true if it was
+// successfull.
+bool SinglyLinkedList::pop_back() {
+    if (empty()) {
+        return false;
+    }
+    else {
+        ListNode *back_node_ptr = GetBackPointer();
+        delete back_node_ptr;
+        size_--;
+        return true;
+    }
+}

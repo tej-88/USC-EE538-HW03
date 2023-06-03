@@ -91,3 +91,10 @@ TEST(Pop_Back, EmptyInput) {
     SinglyLinkedList l;
     EXPECT_FALSE(l.pop_back());
 }
+
+TEST(Pop_Back, NonEmptyInput) {
+    std::vector<int> v = {1, 2};
+    SinglyLinkedList l(v);
+    EXPECT_TRUE(l.pop_back());
+    EXPECT_EQ(l.size(), 1);
+}

@@ -56,6 +56,11 @@ bool Student::operator==(const Student& rhs) const {
 // Implement StudentMaxHeap class
 //-----------------------------------------------------------------------------
 
+// Parameterized constructor: creates a max heap from the given input.
+StudentMaxHeap::StudentMaxHeap(std::vector<Student>& input) {
+  ConvertToHeap(input);
+}
+
 // Returns the parent of a node given its index in the tree. Returns
 // Student("NO_NAME", INT_MIN) if unsuccessful.
 Student StudentMaxHeap::GetParent(int i) {

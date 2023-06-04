@@ -198,12 +198,12 @@ void SinglyLinkedList::remove_duplicates() {
             auto set_iter = tmp_set.find(val);
             if (set_iter == tmp_set.end()) {
                 tmp_set.insert(val);
+                i++;        
             }
             else {
                 tmp_node_ptr = erase(i);
             }
             tmp_node_ptr = tmp_node_ptr->next;
-            i++;        
         }
         return;
     }

@@ -81,3 +81,16 @@ Student StudentMaxHeap::GetLeft(int i) {
     return data_[left_child_idx];
   }
 }
+
+// Returns the right child of a node given its index in the tree. Returns
+// Student("NO_NAME", INT_MIN) if unsuccessful.
+Student StudentMaxHeap::GetRight(int i) {
+  int right_child_idx = GetRightIndex(i);
+    if (right_child_idx == INT_MAX) {
+      Student tmp;
+      return tmp;
+    }
+    else {
+      return data_[right_child_idx];
+    }
+}

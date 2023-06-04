@@ -191,3 +191,19 @@ TEST(GetRight, WithinRange) {
 
     EXPECT_EQ(h.GetRight(0), expected);
 }
+
+//-----------------------------------------------------------------------------
+TEST(GetParentIndex, OutOfRange) {
+    std::string name_a = "A";
+    int grade_a = 1;
+    std::string name_b = "B";
+    int grade_b = 10;
+
+    Student a(name_a, grade_a);
+    Student b(name_b, grade_b);
+
+    std::vector<Student> student_vec = {a, b};
+    StudentMaxHeap h(student_vec);
+
+    EXPECT_EQ(h.GetParentIndex(3), INT_MAX);
+}

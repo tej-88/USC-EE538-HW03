@@ -164,3 +164,10 @@ Student StudentMaxHeap::top() {
     return data_[0];
   }
 }
+
+// Adds a new Student to the heap.
+void StudentMaxHeap::push(const Student& student) {
+  data_.push_back(student);
+  TrickleUp(size() - 1);
+  return;
+}

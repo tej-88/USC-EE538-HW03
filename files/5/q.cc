@@ -240,7 +240,10 @@ void StudentMaxHeap::TrickleDown(int i) {
   }
 }
 
-// // Converts the given input into a max heap and stores that into data_.
-// void StudentMaxHeap::ConvertToHeap(const std::vector<Student>& input) {
-
-// }
+// Converts the given input into a max heap and stores that into data_.
+void StudentMaxHeap::ConvertToHeap(const std::vector<Student>& input) {
+  for (const auto &x : input) {
+    push(x);
+  }
+  return;
+}

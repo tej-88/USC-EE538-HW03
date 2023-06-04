@@ -13,8 +13,8 @@
 // The created list: 1->4->5->6->10, and head_ will point to the first node
 // with value 1.
 SinglyLinkedList::SinglyLinkedList(const std::vector<int> &v) {
+    size_ = 0;
     if (v.empty()) {
-        size_ = 0;
         head_ = nullptr;
     }
     else {
@@ -26,15 +26,22 @@ SinglyLinkedList::SinglyLinkedList(const std::vector<int> &v) {
 
 // Copy constructor.
 SinglyLinkedList::SinglyLinkedList(const SinglyLinkedList &rhs) {
-    if (rhs.empty()) {
+    if (rhs.size_ == 0) {
         size_ = 0;
         head_ = nullptr;
     }
     else {
-        for (int i = 0; i < rhs.size_; i++) {
-            push_back(rhs[i]);
+        ListNode *rhs_node_ptr = rhs.head_;
+        while (rhs_node_ptr != nullptr) {
+            push_back(rhs_node_ptr->val);
+            rhs_node_ptr = rhs_node_ptr->next;
         }
     }
+}
+
+// Destructor
+SinglyLinkedList::~SinglyLinkedList() {
+    while (pop_back());
 }
 
 // Returns true if the list is empty, false otherwise.
@@ -196,7 +203,7 @@ void SinglyLinkedList::remove_duplicates() {
                 tmp_node_ptr = erase(i);
             }
             tmp_node_ptr = tmp_node_ptr->next;
-            i++
+            i++;        
         }
         return;
     }

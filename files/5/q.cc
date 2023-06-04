@@ -106,3 +106,15 @@ int StudentMaxHeap::GetParentIndex(int i) {
     return parent_idx;
   }
 }
+
+// Returns the index of the left child of a node given its index in the tree.
+// Returns INT_MAX if unsuccessful.
+int StudentMaxHeap::GetLeftIndex(int i) {
+  int left_child_idx = (i * 2) + 1;
+  if ((i < 0) || (left_child_idx >= size())) {
+    return INT_MAX;
+  }
+  else {
+    return left_child_idx;
+  }
+}

@@ -175,7 +175,13 @@ void StudentMaxHeap::push(const Student& student) {
 // Removes the top. Returns
 // true if successful and false otherwise.
 bool StudentMaxHeap::pop() {
-  data_[0] = data_[size() - 1];
-  data_.pop_back();
-  TrickleDown(0);
+  if (empty()) {
+    return false;
+  }
+  else {
+    data_[0] = data_[size() - 1];
+    data_.pop_back();
+    TrickleDown(0);
+    return true;
+  }
 }

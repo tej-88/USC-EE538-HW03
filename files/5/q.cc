@@ -130,3 +130,25 @@ int StudentMaxHeap::GetRightIndex(int i) {
     return right_child_idx;
   }
 }
+
+// Returns the index of the largest child of a node given its index in the
+// tree. Returns INT_MAX if unsuccessful.
+int StudentMaxHeap::GetLargestChildIndex(int i) {
+  int left_child_idx = GetLeftIndex(i);
+  int right_child_idx = GetRightIndex(i);
+  
+  if ((left_child_idx == INT_MAX) && (right_child_idx == INT_MAX)) {
+    return INT_MAX;
+  }
+  else if (right_child_idx == INT_MAX) {
+    return left_child_idx;
+  }
+  else {
+    if (data_[left_child_idx] < data_[right_child_idx]) {
+      return right_child_idx;
+    }
+    else {
+      return left_child_idx;
+    }
+  }
+}

@@ -123,3 +123,20 @@ TEST(GetParent, Root) {
 
     EXPECT_EQ(h.GetParent(0), expected);
 }
+
+//-----------------------------------------------------------------------------
+TEST(GetLeft, OutOfRange) {
+    std::string name_a = "A";
+    int grade_a = 10;
+    std::string name_b = "B";
+    int grade_b = 10;
+
+    Student a(name_a, grade_a);
+    Student b(name_b, grade_b);
+
+    std::vector<Student> student_vec = {a, b};
+    StudentMaxHeap h(student_vec);
+    Student expected;
+
+    EXPECT_EQ(h.GetParent(1), expected);
+}

@@ -29,3 +29,12 @@ Student::Student() : name("NO_NAME"), grade(INT_MIN) {
 Student::Student(const Student& rhs) : name(rhs.name), grade(rhs.grade) {
 
 }
+
+// The following operators are overloaded. They only compare the grade part of
+// the class with other objects.
+
+// Returns true if grade is less than the grade of other Student objects and
+// false otherwise.
+bool Student::operator<(const Student& rhs) const {
+  return (grade < rhs.grade);
+}

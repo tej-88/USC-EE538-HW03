@@ -12,3 +12,9 @@ std::ostream& operator<<(std::ostream& os, const Student& s) {
   return os << s.DebugString();
 }
 //-----------------------------------------------------------------------------
+
+
+// Parameterized constructor
+Student::Student(std::string name, int grade) : name(name), grade(grade) {
+
+}

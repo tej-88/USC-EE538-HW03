@@ -211,3 +211,11 @@ TEST(RemoveDuplicates, EmptyInput) {
     std::vector<int> expected;
     EXPECT_EQ(l.convert_to_vector(), expected);
 }
+
+TEST(RemoveDuplicates, SingleInput) {
+    std::vector<int> v = {1};
+    SinglyLinkedList l(v);
+    l.remove_duplicates();
+    std::vector<int> expected = {1};
+    EXPECT_EQ(l.convert_to_vector(), expected);
+}

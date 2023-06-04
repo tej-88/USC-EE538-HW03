@@ -50,3 +50,21 @@ bool Student::operator>(const Student& rhs) const {
 bool Student::operator==(const Student& rhs) const {
   return (grade == rhs.grade);
 }
+
+
+//-----------------------------------------------------------------------------
+// Implement StudentMaxHeap class
+//-----------------------------------------------------------------------------
+
+// Returns the parent of a node given its index in the tree. Returns
+// Student("NO_NAME", INT_MIN) if unsuccessful.
+Student StudentMaxHeap::GetParent(int i) {
+  int parent_idx = GetParentIndex(i);
+  if (parent_idx == INT_MAX) {
+    Student tmp;
+    return tmp;
+  }
+  else {
+    return data_[parent_idx];
+  }
+}

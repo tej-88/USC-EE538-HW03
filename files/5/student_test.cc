@@ -17,3 +17,14 @@ TEST(LessOperator, TrueOutput) {
     Student b(name_b, grade_b);
     EXPECT_TRUE(a > b);
 }
+
+TEST(LessOperator, FalseOutput) {
+    std::string name_a = "A";
+    int grade_a = 10;
+    std::string name_b = "B";
+    int grade_b = 2;
+
+    Student a(name_a, grade_a);
+    Student b(name_b, grade_b);
+    EXPECT_FALSE(a < b);
+}

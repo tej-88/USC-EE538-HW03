@@ -406,3 +406,32 @@ TEST(Push, NonEmptyHeap) {
     std::vector<Student> expected = {c, a, b};
     EXPECT_EQ(h.GetData(), expected);
 }
+
+//-----------------------------------------------------------------------------
+TEST(Pop, EmptyHeap) {
+    StudentMaxHeap h;
+    std::vector<Student> expected;
+    EXPECT_FALSE(h.pop());
+    EXPECT_EQ(h.GetData(), expected);
+}
+
+TEST(Push, NonEmptyHeap) {
+    std::string name_a = "A";
+    int grade_a = 1;
+    std::string name_b = "B";
+    int grade_b = 10;
+    std::string name_c = "C";
+    int grade_c = 20;
+
+    Student a(name_a, grade_a);
+    Student b(name_b, grade_b);
+    Student c(name_c, grade_c);
+
+    std::vector<Student> student_vec = {a, b, c};
+    StudentMaxHeap h(student_vec);
+    
+
+    std::vector<Student> expected = {c, a};
+    EXPECT_TRUE(h.pop());
+    EXPECT_EQ(h.GetData(), expected);
+}

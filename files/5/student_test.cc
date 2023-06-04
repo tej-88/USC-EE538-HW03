@@ -347,3 +347,27 @@ TEST(GetLargestChildIndex, TwoChild) {
 
     EXPECT_EQ(h.GetLargestChildIndex(0), 2);
 }
+
+//-----------------------------------------------------------------------------
+TEST(Top, EmptyHeap) {
+    StudentMaxHeap h;
+    Student expected;
+    EXPECT_EQ(h.top(), expected);
+}
+
+TEST(Top, NonEmptyHeap) {
+    std::string name_a = "A";
+    int grade_a = 1;
+    std::string name_b = "B";
+    int grade_b = 10;
+    std::string name_c = "C";
+    int grade_c = 20;
+
+    Student a(name_a, grade_a);
+    Student b(name_b, grade_b);
+
+    std::vector<Student> student_vec = {a, b, c};
+    StudentMaxHeap h(student_vec);
+    Student expected = c;
+    EXPECT_EQ(h.top(), expected);
+}

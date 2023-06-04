@@ -171,3 +171,11 @@ void StudentMaxHeap::push(const Student& student) {
   TrickleUp(size() - 1);
   return;
 }
+
+// Removes the top. Returns
+// true if successful and false otherwise.
+bool StudentMaxHeap::pop() {
+  data_[0] = data_[size() - 1];
+  data_.pop_back();
+  TrickleDown(0);
+}

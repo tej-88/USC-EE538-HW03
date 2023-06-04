@@ -38,3 +38,9 @@ Student::Student(const Student& rhs) : name(rhs.name), grade(rhs.grade) {
 bool Student::operator<(const Student& rhs) const {
   return (grade < rhs.grade);
 }
+
+// Returns true if grade is greater than the grade of other Student objects
+// and false otherwise.
+bool Student::operator>(const Student& rhs) const {
+  return (grade > rhs.grade);
+}

@@ -44,3 +44,9 @@ bool Student::operator<(const Student& rhs) const {
 bool Student::operator>(const Student& rhs) const {
   return (grade > rhs.grade);
 }
+
+// Returns true if grade is equal to the grade of other Student objects and
+// false otherwise.
+bool Student::operator==(const Student& rhs) const {
+  return (grade == rhs.grade);
+}

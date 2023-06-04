@@ -160,6 +160,7 @@ ListNode *SinglyLinkedList::erase(int i) {
         ListNode *tmp_node_ptr = head_;
         head_ = tmp_node_ptr->next;
         delete tmp_node_ptr;
+        size_--;
         return head_;
     }
     else {
@@ -167,6 +168,36 @@ ListNode *SinglyLinkedList::erase(int i) {
         ListNode *i_prev_node_ptr = GetIthPointer(i - 1);
         i_prev_node_ptr->next = i_node_ptr->next;
         delete i_node_ptr;
+        size_--;
         return i_prev_node_ptr;
+    }
+}
+
+// Removes duplicate elements and only keeps the first one.
+// Example:
+// Input: 1 -> 5 -> 1 -> 20 -> 4 -> 5 -> 32
+// Output: 1 -> 5 -> 20 -> 4 -> 32
+void SinglyLinkedList::remove_duplicates() {
+    if (size() <= 1) {
+        return;
+    }
+    else {
+        ListNode *tmp_node_ptr = head();
+        std::unordered_set<int> tmp_set;
+        int i = 0;
+
+        while (tmp_node_ptr != nullptr) {
+            int val = tmp_node_ptr->val; 
+            auto set_iter = tmp_set.find(val);
+            if (set_iter == tmp_set.end()) {
+                tmp_set.insert(val);
+            }
+            else {
+                tmp_node_ptr = erase(i);
+            }
+            tmp_node_ptr = tmp_node_ptr->next;
+            i++
+        }
+        return;
     }
 }

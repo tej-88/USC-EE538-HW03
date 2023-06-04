@@ -94,3 +94,15 @@ Student StudentMaxHeap::GetRight(int i) {
       return data_[right_child_idx];
     }
 }
+
+// Returns the index of the parent of a node given its index in the tree.
+// Returns INT_MAX if unsuccessful.
+int StudentMaxHeap::GetParentIndex(int i) {
+  int parent_idx = (i - 2) / 2;
+  if ((parent_idx < 0) || (i >= size())) {
+    return INT_MAX;
+  }
+  else {
+    return parent_idx;
+  }
+}

@@ -235,3 +235,11 @@ TEST(RemoveDuplicates, DuplicateInputs) {
     std::vector<int> expected = {1};
     EXPECT_EQ(l.convert_to_vector(), expected);
 }
+
+TEST(RemoveDuplicates, MixedInputs) {
+    std::vector<int> v = {1, 3, 1, 4, 4, 3, 5, 7};
+    SinglyLinkedList l(v);
+    l.remove_duplicates();
+    std::vector<int> expected = {1, 3, 4, 5, 7};
+    EXPECT_EQ(l.convert_to_vector(), expected);
+}

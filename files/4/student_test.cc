@@ -203,3 +203,11 @@ TEST(Erase, OutOfRange) {
     SinglyLinkedList l(v);
     EXPECT_EQ(l.erase(10), nullptr);
 }
+
+//-----------------------------------------------------------------------------
+TEST(RemoveDuplicates, EmptyInput) {
+    SinglyLinkedList l;
+    l.remove_duplicates();
+    std::vector<int> expected;
+    EXPECT_EQ(l.convert_to_vector(), expected);
+}

@@ -415,7 +415,7 @@ TEST(Pop, EmptyHeap) {
     EXPECT_EQ(h.GetData(), expected);
 }
 
-TEST(Push, NonEmptyHeap) {
+TEST(Pop, NonEmptyHeap) {
     std::string name_a = "A";
     int grade_a = 1;
     std::string name_b = "B";

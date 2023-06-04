@@ -24,3 +24,8 @@ Student::Student(std::string name, int grade) : name(name), grade(grade) {
 Student::Student() : name("NO_NAME"), grade(INT_MIN) {
 
 }
+
+// Copy constructor.
+Student::Student(const Student& rhs) : name(rhs.name), grade(rhs.grade) {
+
+}

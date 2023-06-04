@@ -185,3 +185,42 @@ bool StudentMaxHeap::pop() {
     return true;
   }
 }
+
+// Performs trickle up. It should use the overloaded operators of the Student
+// class.
+void StudentMaxHeap::TrickleUp(int i) {
+  if ((i < 0) || (i >= size())) {
+    return;
+  }
+  else {
+    int parent_idx = GetParentIndex(i);
+    if (parent_idx == INT_MAX) {
+      return;
+    }
+    else {
+      Student parent = data_[parent_idx];
+      Student child = data_[i];
+      if (child < parent) {
+        return;
+      }
+      else {
+        Student tmp = parent;
+        data_[parent_idx] = child;
+        data_[child] = tmp;
+        TrickleUp(parent_idx);
+        return;
+      }
+    }
+  }
+}
+
+// // Performs trickle up. It should use the overloaded operators of the Student
+// // class.
+// void StudentMaxHeap::TrickleDown(int i) {
+
+// }
+
+// // Converts the given input into a max heap and stores that into data_.
+// void StudentMaxHeap::ConvertToHeap(const std::vector<Student>& input) {
+
+// }

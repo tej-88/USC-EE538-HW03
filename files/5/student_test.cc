@@ -138,5 +138,6 @@ TEST(GetLeft, OutOfRange) {
     StudentMaxHeap h(student_vec);
     Student expected;
 
-    EXPECT_EQ(h.GetParent(1), expected);
+    EXPECT_EQ(h.GetLeft(1), expected);
 }
+

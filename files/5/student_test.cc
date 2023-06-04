@@ -295,10 +295,55 @@ TEST(GetRightIndex, WithinRange) {
 
     Student a(name_a, grade_a);
     Student b(name_b, grade_b);
+    Student c(name_c, grade_c);
 
     std::vector<Student> student_vec = {a, b, c};
     StudentMaxHeap h(student_vec);
     Student expected = b;
 
     EXPECT_EQ(h.GetRightIndex(0), 2);
+}
+
+//-----------------------------------------------------------------------------
+TEST(GetLargestChildIndex, NoChild) {
+    std::string name_a = "A";
+    int grade_a = 1;
+    
+    Student a(name_a, grade_a);
+
+    std::vector<Student> student_vec = {a};
+    StudentMaxHeap h(student_vec);
+
+    EXPECT_EQ(h.GetLargestChildIndex(0), INT_MAX);
+}
+
+TEST(GetLargestChildIndex, OneChild) {
+    std::string name_a = "A";
+    int grade_a = 1;
+    std::string name_b = "B";
+    int grade_b = 10;
+
+    Student a(name_a, grade_a);
+    Student b(name_b, grade_b);
+    std::vector<Student> student_vec = {a, b};
+    StudentMaxHeap h(student_vec);
+
+    EXPECT_EQ(h.GetLargestChildIndex(0), 1);
+}
+
+TEST(GetLargestChildIndex, TwoChild) {
+    std::string name_a = "A";
+    int grade_a = 1;
+    std::string name_b = "B";
+    int grade_b = 10;
+    std::string name_c = "C";
+    int grade_c = 20;
+
+    Student a(name_a, grade_a);
+    Student b(name_b, grade_b);
+
+    std::vector<Student> student_vec = {a, b, c};
+    StudentMaxHeap h(student_vec);
+
+    EXPECT_EQ(h.GetLargestChildIndex(0), 2);
 }

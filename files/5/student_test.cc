@@ -51,3 +51,15 @@ TEST(MoreOperator, FalseOutput) {
     Student b(name_b, grade_b);
     EXPECT_FALSE(a > b);
 }
+
+//-----------------------------------------------------------------------------
+TEST(EqualOperator, TrueOutput) {
+    std::string name_a = "A";
+    int grade_a = 10;
+    std::string name_b = "B";
+    int grade_b = 10;
+
+    Student a(name_a, grade_a);
+    Student b(name_b, grade_b);
+    EXPECT_TRUE(a == b);
+}

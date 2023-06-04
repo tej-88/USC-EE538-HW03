@@ -68,3 +68,16 @@ Student StudentMaxHeap::GetParent(int i) {
     return data_[parent_idx];
   }
 }
+
+// Returns the left child of a node given its index in the tree. Returns
+// Student("NO_NAME", INT_MIN) if unsuccessful.
+Student StudentMaxHeap::GetLeft(int i) {
+  int left_child_idx = GetLeftIndex(i);
+  if (left_child_idx == INT_MAX) {
+    Student tmp;
+    return tmp;
+  }
+  else {
+    return data_[left_child_idx];
+  }
+}

@@ -152,3 +152,15 @@ int StudentMaxHeap::GetLargestChildIndex(int i) {
     }
   }
 }
+
+// Returns the top of the heap. Returns
+// Student("NO_NAME", INT_MIN) if unsuccessful.
+Student StudentMaxHeap::top() {
+  if (empty()) {
+    Student tmp;
+    return tmp;
+  }
+  else {
+    return data_[0];
+  }
+}

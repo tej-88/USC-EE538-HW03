@@ -41,3 +41,23 @@ void BinaryTree::PreOrder_Helper(BinaryTreeNode *root, std::vector<int> &v) {
     return;
   }
 }
+
+// Returns the number of nodes in the tree. It uses size_helper.
+int BinaryTree::size() {
+  int num_nodes = 0;
+  size_helper(root_, num_nodes);
+  return num_nodes;
+}
+
+// A helper function for size()
+void BinaryTree::size_helper(BinaryTreeNode *root, int &counter) {
+  if (root == nullptr) {
+    return;
+  }
+  else {
+    counter++;
+    size_helper(root->left, counter);
+    size_helper(root->right, counter);
+    return;
+  }
+}

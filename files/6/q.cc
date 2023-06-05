@@ -108,7 +108,7 @@ std::vector<Direction> BinaryTree::GetPathToIthElement(int i) {
     return result;
   }
   else {
-    while (i >= 0) {
+    while (i > 0) {
       if ((i % 2) == 0) {
         result.push_back(Direction::kRight);
       }
@@ -117,6 +117,7 @@ std::vector<Direction> BinaryTree::GetPathToIthElement(int i) {
       }
       i = (i - 1) / 2;
     }
+    std::reverse(result.begin(), result.end());
     return result;
   }
 }

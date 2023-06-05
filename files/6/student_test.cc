@@ -88,3 +88,34 @@ TEST(GetHeight, MultipleMissingNode) {
   BinaryTree bt(vec);
   EXPECT_EQ(bt.GetHeight(), 3);
 }
+
+//-----------------------------------------------------------------------------
+TEST(GetPathToIthElement, ZeroIndex) {
+  BinaryTree bt;
+  std::vector<Direction> expected;
+  EXPECT_EQ(bt.GetPathToIthElement(0), expected);
+}
+
+TEST(GetPathToIthElement, OneIndex) {
+  BinaryTree bt;
+  std::vector<Direction> expected = {Direction::kLeft};
+  EXPECT_EQ(bt.GetPathToIthElement(1), expected);
+}
+
+TEST(GetPathToIthElement, TwoIndex) {
+  BinaryTree bt;
+  std::vector<Direction> expected = {Direction::kRight};
+  EXPECT_EQ(bt.GetPathToIthElement(2), expected);
+}
+
+TEST(GetPathToIthElement, EightIndex) {
+  BinaryTree bt;
+  std::vector<Direction> expected = {Direction::kLeft, Direction::kLeft, Direction::kRight};
+  EXPECT_EQ(bt.GetPathToIthElement(8), expected);
+}
+
+TEST(GetPathToIthElement, ElevenIndex) {
+  BinaryTree bt;
+  std::vector<Direction> expected = {Direction::kRight, Direction::kLeft, Direction::kLeft};
+  EXPECT_EQ(bt.GetPathToIthElement(8), expected);
+}

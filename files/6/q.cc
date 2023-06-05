@@ -156,6 +156,7 @@ bool IsBST(BinaryTreeNode *root) {
     else {
       if (((root->val) > (left_ptr->val)) && ((root->val) < (right_ptr->val))){
         return (IsBST(left_ptr) && IsBST(right_ptr));
+      }
     }
   }
 }

@@ -63,3 +63,28 @@ TEST(Size, MultipleMissingNode) {
   BinaryTree bt(vec);
   EXPECT_EQ(bt.size(), 5);
 }
+
+//-----------------------------------------------------------------------------
+TEST(GetHeight, EmptyTree) {
+  std::vector<int> vec;
+  BinaryTree bt(vec);
+  EXPECT_EQ(bt.GetHeight(), 0);
+}
+
+TEST(GetHeight, SingleNode) {
+  std::vector<int> vec = {1};
+  BinaryTree bt(vec);
+  EXPECT_EQ(bt.GetHeight(), 1);
+}
+
+TEST(GetHeight, MultipleNode) {
+  std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8};
+  BinaryTree bt(vec);
+  EXPECT_EQ(bt.GetHeight(), 4);
+}
+
+TEST(GetHeight, MultipleMissingNode) {
+  std::vector<int> vec = {15, 5, 14, -1, 1, -1, 12};
+  BinaryTree bt(vec);
+  EXPECT_EQ(bt.GetHeight(), 3);
+}

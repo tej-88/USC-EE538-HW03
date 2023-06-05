@@ -61,3 +61,27 @@ void BinaryTree::size_helper(BinaryTreeNode *root, int &counter) {
     return;
   }
 }
+
+// Returns the height of the tree. It uses GetHeight_Helper.
+int BinaryTree::GetHeight() {
+  int current_level = 0;
+  int height = 0;
+  GetHeight_Helper(root_, current_level, height);
+  return height;
+}
+
+void BinaryTree::GetHeight_Helper(BinaryTreeNode *root, int current_level,
+                      int &max_height) {
+                        if (root == nullptr) {
+                          if (current_level > max_height) {
+                            max_height = current_level;
+                          }
+                          return;
+                        }
+                        else {
+                          current_level++;
+                          GetHeight_Helper(root->left, current_level, max_height);
+                          GetHeight_Helper(root->right, current_level, max_height);
+                          return;
+                        }
+                      }

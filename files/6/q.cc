@@ -121,3 +121,41 @@ std::vector<Direction> BinaryTree::GetPathToIthElement(int i) {
     return result;
   }
 }
+
+// Note that this function is outside of the BinaryTree class.
+// Returns true if the given binary tree with the given root is a Binary Search
+// Tree. If the tree was empty, it returns true.
+// You can assume that there are no duplicate values in the given input tree and
+// any child if it exists, has a non-negative value.
+bool IsBST(BinaryTreeNode *root) {
+  if (root == nullptr) {
+    return true;
+  }
+  else {
+    BinaryTreeNode *left_ptr = root->left;
+    BinaryTreeNode *right_ptr = root->right;
+    if ((left_ptr == nullptr) && (right_ptr == nullptr)) {
+      return true;
+    }
+    else if (left_ptr == nullptr) {
+      if ((root->val) < (right_ptr->val)) {
+        return IsBST(right_ptr);
+      }
+      else {
+        return false;
+      }
+    }
+    else if (right_ptr == nullptr) {
+      if ((root->val) > (left_ptr->val)) {
+        return IsBST(left_ptr);
+      }
+      else {
+        return false;
+      }
+    }
+    else {
+      if (((root->val) > (left_ptr->val)) && ((root->val) < (right_ptr->val))){
+        return (IsBST(left_ptr) && IsBST(right_ptr));
+    }
+  }
+}

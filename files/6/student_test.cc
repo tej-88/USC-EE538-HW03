@@ -119,3 +119,39 @@ TEST(GetPathToIthElement, ElevenIndex) {
   std::vector<Direction> expected = {Direction::kRight, Direction::kLeft, Direction::kLeft};
   EXPECT_EQ(bt.GetPathToIthElement(11), expected);
 }
+
+//-----------------------------------------------------------------------------
+TEST(IsBST, EmptyTree) {
+  BinaryTree bt;
+  EXPECT_TRUE(IsBST(bt.root_));
+}
+
+TEST(IsBST, SingleNode) {
+  std::vector<int> vec = {1};
+  BinaryTree bt(vec);
+  EXPECT_TRUE(IsBST(bt.root_));
+}
+
+TEST(IsBST, MultipleNodeNotBST) {
+  std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8};
+  BinaryTree bt(vec);
+  EXPECT_FALSE(IsBST(bt.root_));
+}
+
+TEST(IsBST, MultipleNodeBST) {
+  std::vector<int> vec = {5, 2, 8, 1, 3, 7, 10};
+  BinaryTree bt(vec);
+  EXPECT_TRUE(IsBST(bt.root_));
+}
+
+TEST(GetPathToIthElement, MissingNodeBST) {
+  std::vector<int> vec = {5, 2, 8, -1, 3, 7, -1};
+  BinaryTree bt(vec);
+  EXPECT_TRUE(IsBST(bt.root_));
+}
+
+TEST(GetPathToIthElement, MissingNodeNotBST) {
+  std::vector<int> vec = {5, 6, 8, -1, 3, 7, -1};
+  BinaryTree bt(vec);
+  EXPECT_TRUE(IsBST(bt.root_));
+}

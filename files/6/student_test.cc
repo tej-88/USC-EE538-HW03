@@ -117,5 +117,5 @@ TEST(GetPathToIthElement, EightIndex) {
 TEST(GetPathToIthElement, ElevenIndex) {
   BinaryTree bt;
   std::vector<Direction> expected = {Direction::kRight, Direction::kLeft, Direction::kLeft};
-  EXPECT_EQ(bt.GetPathToIthElement(8), expected);
+  EXPECT_EQ(bt.GetPathToIthElement(11), expected);
 }

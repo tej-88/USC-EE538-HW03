@@ -115,7 +115,7 @@ std::vector<Direction> BinaryTree::GetPathToIthElement(int i) {
       else {
         result.push_back(Direction::kLeft);
       }
-      i = (i - 1) / 2;
+      i = GetParentIndex(i);
     }
     std::reverse(result.begin(), result.end());
     return result;

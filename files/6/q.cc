@@ -85,3 +85,38 @@ void BinaryTree::GetHeight_Helper(BinaryTreeNode *root, int current_level,
                           return;
                         }
                       }
+
+// Assuming we have a complete tree with at least i nodes, it returns the path
+// from the root to a given node index in the tree.
+//
+// Examples:
+//
+// i = 0
+// Output: Empty vector.
+//
+// i = 1
+// Output: {Direction::kLeft}
+//
+// i = 10
+// Output: {Direction::kLeft, Direction::kRight, Direction::kRight}
+// Explanation: Draw a diagram of a complete tree with 10 nodes. Then follow
+// the path from the root to the node indexed 10. You will see that you should
+// first go left, the right, then another right.
+std::vector<Direction> BinaryTree::GetPathToIthElement(int i) {
+  std::vector<Direction> result;
+  if (i == 0) {
+    return result;
+  }
+  else {
+    while (i >= 0) {
+      if ((i % 2) == 0) {
+        result.push_back(Direction::kRight);
+      }
+      else {
+        result.push_back(Direction::kLeft);
+      }
+      i = (i - 1) / 2;
+    }
+    return result;
+  }
+}

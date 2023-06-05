@@ -55,7 +55,7 @@ TEST(MoreOperator, FalseOutput) {
 //-----------------------------------------------------------------------------
 TEST(EqualOperator, TrueOutput) {
     std::string name_a = "A";
-    int grade_a = 1;
+    int grade_a = 10;
     std::string name_b = "B";
     int grade_b = 10;
 
@@ -184,6 +184,7 @@ TEST(GetRight, WithinRange) {
 
     Student a(name_a, grade_a);
     Student b(name_b, grade_b);
+    Student c(name_c, grade_c);
 
     std::vector<Student> student_vec = {a, b, c};
     StudentMaxHeap h(student_vec);
@@ -220,7 +221,7 @@ TEST(GetParentIndex, WithinRange) {
     std::vector<Student> student_vec = {a, b};
     StudentMaxHeap h(student_vec);
 
-    EXPECT_EQ(h.GetParent(1), 0);
+    EXPECT_EQ(h.GetParentIndex(1), 0);
 }
 
 TEST(GetParentIndex, Root) {
@@ -235,7 +236,7 @@ TEST(GetParentIndex, Root) {
     std::vector<Student> student_vec = {a, b};
     StudentMaxHeap h(student_vec);
 
-    EXPECT_EQ(h.GetParent(0), INT_MAX);
+    EXPECT_EQ(h.GetParentIndex(0), INT_MAX);
 }
 
 //-----------------------------------------------------------------------------
@@ -341,6 +342,7 @@ TEST(GetLargestChildIndex, TwoChild) {
 
     Student a(name_a, grade_a);
     Student b(name_b, grade_b);
+    Student c(name_c, grade_c);
 
     std::vector<Student> student_vec = {a, b, c};
     StudentMaxHeap h(student_vec);
@@ -431,7 +433,7 @@ TEST(Pop, NonEmptyHeap) {
     StudentMaxHeap h(student_vec);
     
 
-    std::vector<Student> expected = {c, a};
+    std::vector<Student> expected = {b, a};
     EXPECT_TRUE(h.pop());
     EXPECT_EQ(h.GetData(), expected);
 }
@@ -444,7 +446,7 @@ TEST(ConvertToHeap, EmptyInput) {
     EXPECT_EQ(h.GetData(), expected);
 }
 
-TEST(Pop, NonEmptyHeap) {
+TEST(ConvertToHeap, NonEmptyHeap) {
     std::string name_a = "A";
     int grade_a = 1;
     std::string name_b = "B";

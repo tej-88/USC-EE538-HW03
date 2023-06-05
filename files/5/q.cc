@@ -210,7 +210,7 @@ void StudentMaxHeap::TrickleUp(int i) {
       }
       else {
         data_[parent_idx] = child;
-        data_[child] = parent;
+        data_[i] = parent;
         TrickleUp(parent_idx);
         return;
       }

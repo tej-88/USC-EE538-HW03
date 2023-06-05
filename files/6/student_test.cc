@@ -38,3 +38,28 @@ TEST(PreOrder, MultipleMissingNode) {
   std::vector<int> expected = {15, 5, 1, 14, 12};
   EXPECT_EQ(bt.PreOrder(), expected);
 }
+
+//-----------------------------------------------------------------------------
+TEST(Size, EmptyTree) {
+  std::vector<int> vec;
+  BinaryTree bt(vec);
+  EXPECT_EQ(bt.size(), 0);
+}
+
+TEST(Size, SingleNode) {
+  std::vector<int> vec = {1};
+  BinaryTree bt(vec);
+  EXPECT_EQ(bt.size(), 1);
+}
+
+TEST(Size, MultipleNode) {
+  std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8};
+  BinaryTree bt(vec);
+  EXPECT_EQ(bt.size(), 8);
+}
+
+TEST(Size, MultipleMissingNode) {
+  std::vector<int> vec = {15, 5, 14, -1, 1, -1, 12};
+  BinaryTree bt(vec);
+  EXPECT_EQ(bt.size(), 5);
+}
